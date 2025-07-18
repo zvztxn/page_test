@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>업비트 과태료 183조 가능성 - 뉴스 정리</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            overflow: hidden;
+            transform: translateY(20px);
+            opacity: 0;
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="75" cy="75" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="50" cy="10" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            opacity: 0.1;
+            pointer-events: none;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            font-weight: 700;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .header .subtitle {
+            font-size: 1.1em;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+
+        .section {
+            padding: 30px;
+        }
+
+        .section h2 {
+            color: #2a5298;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+            position: relative;
+        }
+
+        .section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #667eea10, #764ba210);
+            border-left: 4px solid #667eea;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+            position: relative;
+        }
+
+        .highlight-box::before {
+            content: '💡';
+            position: absolute;
+            top: 15px;
+            left: -15px;
+            background: white;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .stat-item {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            border: 1px solid #dee2e6;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .stat-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .stat-number {
+            font-size: 2em;
+            font-weight: 700;
+            color: #2a5298;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 0.9em;
+            color: #6c757d;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 15px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, #667eea, #764ba2);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            margin-left: 15px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -22px;
+            top: 25px;
+            width: 12px;
+            height: 12px;
+            background: #667eea;
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px #667eea;
+        }
+
+        .timeline-date {
+            font-weight: 600;
+            color: #2a5298;
+            margin-bottom: 10px;
+        }
+
+        .quote-box {
+            background: linear-gradient(135deg, #ffeaa7, #fdcb6e);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            position: relative;
+            font-style: italic;
+        }
+
+        .quote-box::before {
+            content: '"';
+            position: absolute;
+            top: -10px;
+            left: 10px;
+            font-size: 4em;
+            color: #e17055;
+            opacity: 0.3;
+        }
+
+        .footer {
+            background: #2d3436;
+            color: white;
+            padding: 30px;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .footer a {
+            color: #74b9ff;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        .card:nth-child(even) {
+            animation-delay: 0.2s;
+        }
+
+        .card:nth-child(odd) {
+            animation-delay: 0.4s;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .section {
+                padding: 20px;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="header">
+                <h1>업비트 과태료 183조 가능성?</h1>
+                <div class="subtitle">법조계는 '과도한 추산' 반론</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="section">
+                <h2>🔍 사건 개요</h2>
+                <p>금융정보분석원(FIU)이 국내 최대 가상자산거래소 업비트 운영사 두나무의 법 위반 사례를 <strong>957만여 건</strong>으로 판단했습니다. 정치권에서는 최대 <strong>183조 원</strong> 규모의 과태료가 부과될 수 있다고 분석했으나, 법조계와 업계에서는 현실성과 거리가 멀다는 반론이 제기되고 있습니다.</p>
+                
+                <div class="highlight-box">
+                    <strong>민병덕 의원실 발표:</strong> FIU 검사 결과, KYC 등 10가지 위반 유형에서 총 957만 438건의 위반이 적발되었으며, 건별 법정 과태료 상한선으로 계산하면 최대 183조원에 이를 수 있다고 밝혔습니다.
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="section">
+                <h2>📊 주요 수치</h2>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-number">957만</div>
+                        <div class="stat-label">총 위반 건수</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">183조원</div>
+                        <div class="stat-label">최대 과태료 추산</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">900만</div>
+                        <div class="stat-label">KYC 미이행 건수</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">4만4948</div>
+                        <div class="stat-label">미신고 해외사업자 거래</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="section">
+                <h2>⚖️ 법조계 반론</h2>
+                <div class="quote-box">
+                    "법 위반 사례별로 과태료 상한을 곱해 이론상 183조원이 산출될 수는 있지만, 동일한 위반행위가 반복되었거나 경미한 행위까지 단순 합산한 것으로, 실제 부과되는 과태료는 훨씬 낮을 것"
+                    <br><br>
+                    <strong>- 양태정 법무법인 광야 변호사</strong>
+                </div>
+                
+                <p>법조계에서는 183조원 추산이 과도하다는 지적이 잇따르고 있습니다. 실제로는 위반 행위의 경중과 반복성을 고려하여 훨씬 낮은 수준의 과태료가 부과될 것으로 예상됩니다.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="section">
+                <h2>🏢 업계 관측</h2>
+                <p>업계에서는 과태료 산정에 있어 <strong>KYC 위반</strong>보다 <strong>미신고 해외 가상자산사업자와의 거래</strong>가 더 중대한 요소가 될 수 있다고 분석하고 있습니다.</p>
+                
+                <div class="highlight-box">
+                    <strong>위반 유형별 심각도:</strong>
+                    <ul style="margin-top: 10px;">
+                        <li><strong>KYC 위반:</strong> 자금세탁 가능성을 높이는 간접적 위험</li>
+                        <li><strong>미신고 사업자 거래:</strong> 특금법상 명시적으로 금지된 직접적 위법 행위</li>
+                    </ul>
+                </div>
+                
+                <p>업비트는 신고되지 않은 해외 사업자 19곳과 총 4만4948건의 가상자산 이전을 중개하거나 지원한 것으로 나타났습니다.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="section">
+                <h2>📅 사건 경과</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-date">2023년</div>
+                        <div>가상자산 예치업체 델리오, 미신고 해외사업자와의 171건 거래 적발로 3개월 영업정지 및 약 19억 원 과태료 처분</div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-date">2025년 3월</div>
+                        <div>두나무, FIU의 3개월 영업정지 처분에 대해 행정소송 제기 후 법원으로부터 집행정지 결정 획득</div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-date">2025년 7월 17일</div>
+                        <div>업비트와 FIU 간 본안 소송 첫 재판 진행 (결론 미달)</div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-date">2025년 7월 17일</div>
+                        <div>FIU 제재심의위원회 개최, 과태료 부과 수위 논의 (결론 보류)</div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-date">2025년 9월 25일 (예정)</div>
+                        <div>다음 재판 기일 예정</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="section">
+                <h2>⚡ 현재 상황</h2>
+                <p>과태료 부과 수위는 아직 확정되지 않았습니다. FIU는 제재심의위원회를 통해 업비트의 법 위반 사항에 대한 과태료 부과 수위를 논의했으나 결론을 내리지 못했으며, 다음 제재심 회의에서 재논의될 예정입니다.</p>
+                
+                <div class="highlight-box">
+                    <strong>결정 권한:</strong> 특금법 위반에 대한 FIU 제재는 금융위원회나 증권선물위원회의 별도 승인 절차 없이, 금융정보분석원장 단독 의결로 최종 결정됩니다.
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="footer">
+                <p>출처: 전자신문 | 2025.07.18</p>
+                <p>기사 원문: <a href="https://n.news.naver.com/article/030/0003332883" target="_blank">https://n.news.naver.com/article/030/0003332883</a></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
